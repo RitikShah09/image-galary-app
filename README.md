@@ -1,30 +1,77 @@
-# React + TypeScript + Vite
+# Unsplash Image Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based image gallery that fetches images from the Unsplash API and displays them in a responsive masonry layout. It supports infinite scrolling to load more images as the user scrolls down. Clicking on an image opens it in a modal with a download button.
 
-Currently, two official plugins are available:
+## Table of Contents
+- Features
+- Installation
+- Usage
+- Components
+- APIs Used
+- Dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Fetch images from Unsplash API
+- Responsive masonry layout
+- Infinite scrolling
+- Modal view with image download option
+- Toast notifications for error handling
 
-## Expanding the ESLint configuration
+## Installation
+Clone the repository:
+bash
+git clone https://github.com/RitikShah09/image-galary-app
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+Navigate to the project directory:
+bash
+cd image-galary-app
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Install the dependencies:
+bash
+npm install
+
+
+## Usage
+Start the development server:
+`bash
+npm start
+`
+## Components
+- Home
+This is the main component that handles the following:
+- Fetching images from the Unsplash API
+- Managing state for images, pagination, loading, and selected image
+- Handling infinite scrolling
+- Rendering the masonry layout of images
+- Displaying a modal with the selected image and download option
+
+
+## State Variables
+- page: The current page number for API requests.
+- data: An array of fetched images.
+- pic: The currently selected image for the modal view.
+- loading: A boolean indicating whether images are being loaded.
+
+
+## Functions
+- GetImages(): Fetches images from the Unsplash API and updates the state.
+- handleScroll(): Handles infinite scrolling by checking the scroll position and updating the page state.
+
+
+## useEffect Hooks
+- Fetches images whenever the page state changes.
+- Adds and removes the scroll event listener.
+
+## Loader
+- A simple loader component to indicate loading state.
+
+## APIs Used
+- Unsplash API: Used to fetch images.
+
+## Dependencies
+- react: JavaScript library for building user interfaces.
+- react-responsive-masonry: Responsive masonry layout for React.
+- react-toastify: Toast notifications for React.
+- remixicon: Icon library for React.
