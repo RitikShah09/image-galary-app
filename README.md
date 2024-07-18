@@ -19,25 +19,28 @@ This project is a React-based image gallery that fetches images from the Unsplas
 
 ## Installation
 Clone the repository:
-bash
+```bash
 git clone https://github.com/RitikShah09/image-galary-app
+```
 
 
 Navigate to the project directory:
-bash
+```bash
 cd image-galary-app
+```
 
 
 Install the dependencies:
-bash
+```bash
 npm install
+```
 
 
 ## Usage
 Start the development server:
-`bash
+```bash
 npm start
-`
+```
 ## Components
 - Home
 This is the main component that handles the following:
